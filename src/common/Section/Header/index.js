@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 import { Container, Logo, Title } from "./styled.js";
-import Footer from "../Footer/index.js";
 
 const Header = ({footerText}) => {
 
@@ -8,9 +7,11 @@ const Header = ({footerText}) => {
   
 return (
   <Container>
+    <Link to="/">
     <Logo src="https://i.postimg.cc/KYdcs756/5.png" />
+    </Link>
     <Title>
-      Zadanie <strong>rekrutacyjne</strong>
+      Zadanie <strong>rekrutacyjne </strong>
       {footerText}
     </Title>
   </Container>

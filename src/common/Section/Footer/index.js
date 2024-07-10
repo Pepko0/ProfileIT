@@ -10,7 +10,7 @@ import {
   Item,
 } from "./styled.js";
 
-const Footer = ({setFooterText}) => {
+const Footer = ({setFooterText, resetSettings}) => {
   
     const [isListVisible, setListVisible] = useState(false);
     
@@ -50,7 +50,7 @@ const Footer = ({setFooterText}) => {
         </Button__Paragraph>
       </Button>
       <Lists active={isListVisible}>
-        <Item><Link> &gt; ZRESETUJ USTAWIENIA</Link></Item>
+        <Item><Link onClick={resetSettings}> &gt; ZRESETUJ USTAWIENIA</Link></Item>
         <Item><Link onClick={addTextonClick}> &gt; POKAŻ DANE OSOBOWE</Link></Item>
     
 

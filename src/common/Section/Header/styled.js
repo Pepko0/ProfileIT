@@ -3,9 +3,12 @@ import styled from "styled-components";
 export const Container = styled.header`
   width: 100%;
   height: 70px;
-  background-color: ${({theme}) => theme.color.black};
+  padding-left: 20px;
+  padding-right: 20px;;
+  background-color: ${({ theme }) => theme.color.black};
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto 1fr;
+  align-items: center;
 `;
 export const Logo = styled.img`
   background-color: #2d2d2d;
@@ -14,14 +17,11 @@ export const Logo = styled.img`
   //border: solid;
   border-radius: 100%;
   width: 40px;
-  color: white;
-  margin: auto;
-  margin-left: 20px;
+  //margin-left: 20px;
 `;
 
 export const Title = styled.p`
-  //border: solid;
+  text-align: right;
   color: white;
-  text-align: center;
-  margin: auto;
+  margin-right: 40px
 `;
