@@ -1,6 +1,9 @@
 export const theme = {
     color: {
         black: "#000000",
+        mineShaft: "#323232",
+        
+        
         white: "#FFFFFF",
         gray: "rgba(110, 126, 145, 1)",
         mainblue: "#0366D6",

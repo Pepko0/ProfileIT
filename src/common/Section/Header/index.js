@@ -4,8 +4,7 @@ const Header = () => (
 
     <Container>
         <Logo src="https://i.postimg.cc/KYdcs756/5.png"/>
-        <Title>Zadanie <strong>Rekrutacyjne</strong></Title>
-
+        <Title>Zadanie <strong>rekrutacyjne</strong></Title>
     </Container>
     
 );
