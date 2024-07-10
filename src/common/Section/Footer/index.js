@@ -10,13 +10,21 @@ import {
   Item,
 } from "./styled.js";
 
-const Footer = () => {
+const Footer = ({setFooterText}) => {
   
     const [isListVisible, setListVisible] = useState(false);
+    
+    
+    //const [footerText, setFooterText] = useState("");
 
     const handleButtonClick = () => {
       setListVisible(!isListVisible);
     };
+
+    const addTextonClick = () => {
+        setFooterText("Kacper Lewko");
+    }
+
   
   return (
   <Container>
@@ -42,8 +50,10 @@ const Footer = () => {
         </Button__Paragraph>
       </Button>
       <Lists active={isListVisible}>
-        <Item><Link href="#"> &gt; ZRESETUJ USTAWIENIA</Link></Item>
-        <Item><Link href="#"> &gt; POKAŻ DANE OSOBOWE</Link></Item>
+        <Item><Link> &gt; ZRESETUJ USTAWIENIA</Link></Item>
+        <Item><Link onClick={addTextonClick}> &gt; POKAŻ DANE OSOBOWE</Link></Item>
+    
+
       </Lists>
     </DropUp>
   </Container>
