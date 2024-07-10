@@ -53,6 +53,11 @@ export const Link = styled.button`
    // width: 100%;
     background-color: transparent;
     cursor: pointer;
+
+    &:disabled {
+        cursor: not-allowed;
+        color: gray;
+    };
 `;
 
 export const Lists = styled.ul`
