@@ -3,7 +3,7 @@ import {
   Container,
   Logo,
   Button,
-  Button__Paragraph,
+  ButtonParagraph,
   DropUp,
   Link,
   Lists,
@@ -26,7 +26,7 @@ const Footer = ({ setFooterText, resetSettings }) => {
       <Logo src="https://i.postimg.cc/cHFVK0bd/logo-css-is-awesome-gg.png"></Logo>
       <DropUp>
         <Button onClick={handleButtonClick}>
-          <Button__Paragraph>
+          <ButtonParagraph>
             {isListVisible ? (
               <>
                 UKRYJ
@@ -62,7 +62,7 @@ const Footer = ({ setFooterText, resetSettings }) => {
                 </svg>
               </>
             )}
-          </Button__Paragraph>
+          </ButtonParagraph>
         </Button>
         <Lists active={isListVisible}>
           <Item>
@@ -78,3 +78,4 @@ const Footer = ({ setFooterText, resetSettings }) => {
 };
 
 export default Footer;
+

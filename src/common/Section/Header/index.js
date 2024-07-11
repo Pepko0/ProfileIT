@@ -3,8 +3,6 @@ import { Container, Logo, Title } from "./styled.js";
 
 const Header = ({footerText}) => {
 
-  
-  
 return (
   <Container>
     <Link to="/">

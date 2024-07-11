@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.footer`
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   height: 90px; 
@@ -24,7 +24,7 @@ export const DropUp = styled.div`
     position: relative;
 `;
 
-export const Button =styled.a`
+export const Button =styled.button`
     width: 175px;
     min-height: 40px;
     margin:20px;
@@ -36,7 +36,7 @@ export const Button =styled.a`
     align-items: center;
 `;
 
-export const Button__Paragraph = styled.p`
+export const ButtonParagraph = styled.p`
     display: flex;
     font-weight: bold;
     align-items: center;
