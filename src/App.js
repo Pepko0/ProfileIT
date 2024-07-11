@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import "./App.css";
 import Footer from "./common/Section/Footer";
@@ -7,10 +8,11 @@ import Content from "./common/Section/Content";
 
 const initialeState = {
   footerText: "",
+  contentText: "",
 };
 
 function App() {
-  //const [footerText, setFooterText] = useState("");
+
   const [state, setState] = useState(initialeState);
 
   const resetSettings = () => {
