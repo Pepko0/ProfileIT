@@ -13,7 +13,6 @@ import {
 const Footer = ({ setFooterText, resetSettings }) => {
   const [isListVisible, setListVisible] = useState(false);
 
-
   const handleButtonClick = () => {
     setListVisible(!isListVisible);
   };
@@ -28,21 +27,41 @@ const Footer = ({ setFooterText, resetSettings }) => {
       <DropUp>
         <Button onClick={handleButtonClick}>
           <Button__Paragraph>
-            {isListVisible ? "UKRYJ" : "POKAŻ"}
-            <svg
-              width="20"
-              color="gray"
-              height="20"
-              fill="none"
-              stroke="gray"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="3"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="m18 15-6-6-6 6"></path>
-            </svg>
+            {isListVisible ? (
+              <>
+                UKRYJ
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="gray"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="3"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
+              </>
+            ) : (
+              <>
+                POKAŻ
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="gray"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="3"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="m18 15-6-6-6 6"></path>
+                </svg>
+              </>
+            )}
           </Button__Paragraph>
         </Button>
         <Lists active={isListVisible}>
@@ -50,12 +69,7 @@ const Footer = ({ setFooterText, resetSettings }) => {
             <Link onClick={resetSettings}> &gt; ZRESETUJ USTAWIENIA</Link>
           </Item>
           <Item>
-            <Link
-              onClick={addTextonClick}
-            >
-          
-              &gt; POKAŻ DANE OSOBOWE
-            </Link>
+            <Link onClick={addTextonClick}>&gt; POKAŻ DANE OSOBOWE</Link>
           </Item>
         </Lists>
       </DropUp>
