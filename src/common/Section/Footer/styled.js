@@ -82,3 +82,13 @@ export const Item = styled.li`
         border-radius: 5px;
     }
 `;
+
+export const Company = styled.p `
+    display:none;
+
+    @media(min-width: ${({theme}) => theme.breakpoint.phone}){
+        display:block;
+        margin: auto;
+        text-decoration: line-through;
+    }
+`;

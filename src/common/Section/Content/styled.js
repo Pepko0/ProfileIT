@@ -46,6 +46,21 @@ export const BlockRight = styled.div`
   //border: solid;
   width: 100%;
   text-align: Right;
+
+  @media(min-width: ${({theme}) => theme.breakpoint.phone}){
+    
+    text-align: center;
+  }
+`;
+
+export const BlockFooter = styled.div`
+  display: none;
+
+  @media(min-width: ${({theme}) => theme.breakpoint.phone}){
+    display:block;
+    width: 100%;
+  }
+
 `;
 
 export const Title = styled.h2`
@@ -76,10 +91,52 @@ export const ButtonParagraph = styled.p`
 `;
 
 export const Footer = styled.div`
+    display:block;
     margin-top: 30px;
     margin-bottom: 90px;
+
+    @media(min-width: ${({theme}) => theme.breakpoint.phone}){
+      display: none;
+    };
 `
 
 export const FooterText = styled.p`
     margin-bottom: 40px;
+`;
+
+export const Dialog = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const DialogContent = styled.div`
+  background: white;
+  padding: 20px;
+  border-radius: 4px;
+  text-align: center;
+`;
+
+export const DialogActions = styled.div`
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+`;
+
+export const DialogButton = styled.button`
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  &:hover {
+    background: #0056b3;
+  }
 `;

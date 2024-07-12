@@ -13,7 +13,7 @@ export const theme = {
 
     },
 
-    media: {
+    breakpoint: {
         phone: "767px",
         tablet: "1024px",
     },

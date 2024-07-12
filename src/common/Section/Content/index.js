@@ -12,9 +12,17 @@ import {
   ButtonParagraph,
   Footer,
   FooterText,
+  BlockFooter,
 } from "./styled.js";
 
-const Content = ({ footerText, setFooterText, linkText, setLinkText, selectedOption, setSelectedOption }) => {
+const Content = ({
+  footerText,
+  setFooterText,
+  linkText,
+  setLinkText,
+  selectedOption,
+  setSelectedOption,
+}) => {
   const [texts, setTexts] = useState([]);
   const navigate = useNavigate();
 
@@ -58,13 +66,14 @@ const Content = ({ footerText, setFooterText, linkText, setLinkText, selectedOpt
         newText = texts[selectedOption];
       }
       setFooterText((prevText) => {
-        const updatedFooterText = [...prevText.split(" "), newText].sort().join(" ");
+        const updatedFooterText = [...prevText.split(" "), newText]
+          .sort()
+          .join(" ");
         navigate(`/${updatedFooterText}`);
         return updatedFooterText;
       });
     }
   };
-  
 
   return (
     <Container>
@@ -113,6 +122,11 @@ const Content = ({ footerText, setFooterText, linkText, setLinkText, selectedOpt
             </Button>
           </Label>
         </BlockRight>
+        <BlockFooter>
+        <Title>BLOK Z DŁUGĄ NAZWĄ KTÓRA SAMA SIĘ PRZYTNIE ...</Title>
+        <FooterText>{footerText}</FooterText>
+        <a href={`/${footerText}`}>{linkText}</a>
+        </BlockFooter>
       </Blocks>
       <Footer>
         <Title>BLOK Z DŁUGĄ NAZWĄ KTÓRA SAMA SIĘ PRZYTNIE ...</Title>
