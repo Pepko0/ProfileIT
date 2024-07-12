@@ -100,7 +100,7 @@ const Footer = ({ setFooterText, resetSettings, setSelectedOption }) => {
             )}
           </ButtonParagraph>
         </Button>
-        <Lists active={isListVisible}>
+        <Lists className={isListVisible ? 'active' : ''}>
           <Item>
             <Link onClick={handleResetClick}> &gt; ZRESETUJ USTAWIENIA</Link>
           </Item>
