@@ -2,6 +2,7 @@ export const theme = {
     color: {
         black: "#000000",
         mineShaft: "#323232",
+        silverChalice: "#aba4a4",
         
         
         white: "#FFFFFF",

@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {
@@ -14,8 +13,8 @@ import {
   Footer,
   FooterText,
   BlockFooter,
+  BlockMoreRight,
 } from "./styled.js";
-
 
 const Content = ({
   footerText,
@@ -31,7 +30,7 @@ const Content = ({
     fetch(`${process.env.PUBLIC_URL}/texts.json`)
       .then((response) => {
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error("Network response was not ok");
         }
         return response.json();
       })
@@ -44,7 +43,7 @@ const Content = ({
     if (texts.length === 0) {
       return;
     }
-    
+
     let newText = "";
     if (option === 3) {
       do {
@@ -121,16 +120,18 @@ const Content = ({
         </BlockLeft>
         <BlockRight>
           <Title>BLOK DRUGI</Title>
-          <Label>
-            <Button onClick={handleReplaceClick}>
-              <ButtonParagraph>ZASTĄP</ButtonParagraph>
-            </Button>
-          </Label>
-          <Label>
-            <Button onClick={handleAppendClick}>
-              <ButtonParagraph>DOKLEJ</ButtonParagraph>
-            </Button>
-          </Label>
+          <BlockMoreRight>
+            <Label>
+              <Button onClick={handleReplaceClick}>
+                <ButtonParagraph>ZASTĄP</ButtonParagraph>
+              </Button>
+            </Label>
+            <Label>
+              <Button onClick={handleAppendClick}>
+                <ButtonParagraph>DOKLEJ</ButtonParagraph>
+              </Button>
+            </Label>
+          </BlockMoreRight>
         </BlockRight>
         <BlockFooter>
           <Title>BLOK Z DŁUGĄ NAZWĄ KTÓRA SAMA SIĘ PRZYTNIE ...</Title>
@@ -148,4 +149,3 @@ const Content = ({
 };
 
 export default Content;
-

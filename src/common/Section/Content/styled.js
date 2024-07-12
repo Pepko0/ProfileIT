@@ -41,14 +41,19 @@ export const BlockLeft = styled.div`
 `;
 
 export const BlockRight = styled.div`
-  display: flex;
-  flex-direction: column;
-  //border: solid;
-  width: 100%;
-  text-align: Right;
+  text-align: right;
 
   @media (min-width: ${({ theme }) => theme.breakpoint.phone}) {
     text-align: center;
+    flex-direction: column;
+  }
+`;
+
+export const BlockMoreRight = styled.div`
+
+  @media (min-width: ${({ theme }) => theme.breakpoint.phone}) {
+    display: flex;
+    flex-direction: row;
   }
 `;
 
@@ -71,30 +76,37 @@ export const Label = styled.label`
 `;
 
 export const Button = styled.button`
-
-
-  max-width: 100px;
+  width: 175px;
   min-height: 40px;
-  padding:0px 20px;
-
+  margin-bottom: 10px;
   border-radius: 5px;
-  background-color: ${({ theme }) => theme.color.black};
-  color: white;
+  background-color: transparent;
   color: ${({ theme }) => theme.color.mineShaft};
-  border: solid 0.3px;
+  border: solid 2px;
+  display: flex;
+  align-items: center;
 
-  &:hover{
+
+  @media (min-width: ${({ theme }) => theme.breakpoint.phone}) {
+    margin: 10px;
+
+
+
+    &:hover {
     cursor: pointer;
   }
+  }
+
 
 `;
 
 export const ButtonParagraph = styled.p`
+  display: flex;
   font-weight: bold;
+  align-items: center;
   font-size: 15px;
-  //margin: auto;
-  text-align: center;
-  color: white;
+  margin: auto;
+  color: ${({ theme }) => theme.color.silverChalice};
 `;
 
 export const Footer = styled.div`
