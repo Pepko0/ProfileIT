@@ -27,39 +27,38 @@ const Footer = ({ setFooterText, resetSettings, setSelectedOption }) => {
     setSelectedOption(null);
   };
 
-
   return (
     <Container>
       <Logo src="https://i.postimg.cc/cHFVK0bd/logo-css-is-awesome-gg.png"></Logo>
       <Company>
-      <svg
-        width="20"
-        height="20"
-        fill="none"
-        stroke="white"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="3"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M1.5 12h21"></path>
-      </svg>
-      nabthat
-      <svg
-        width="20"
-        height="20"
-        margin="auto"
-        fill="none"
-        stroke="white"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="3"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M1.5 12h21"></path>
-      </svg>
+        <svg
+          width="20"
+          height="20"
+          fill="none"
+          stroke="white"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="3"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M1.5 12h21"></path>
+        </svg>
+        nabthat
+        <svg
+          width="20"
+          height="20"
+          margin="auto"
+          fill="none"
+          stroke="white"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="3"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M1.5 12h21"></path>
+        </svg>
       </Company>
       <DropUp>
         <Button onClick={handleButtonClick}>
@@ -72,9 +71,9 @@ const Footer = ({ setFooterText, resetSettings, setSelectedOption }) => {
                   height="20"
                   fill="none"
                   stroke="gray"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="3"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >

@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import "./App.css";
 import Footer from "./common/Section/Footer";
@@ -51,3 +52,60 @@ function App() {
 
 export default App;
 
+
+
+/*
+import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Header from "./common/Section/Header";
+import Content from "./common/Section/Content";
+import Footer from "./common/Section/Footer";
+import "./App.css";
+
+const initialState = {
+  footerText: "",
+  contentText: "",
+};
+
+function App() {
+  const [state, setState] = useState(initialState);
+  const [footerText, setFooterText] = useState("");
+  const [linkText, setLinkText] = useState("");
+  const [selectedOption, setSelectedOption] = useState(null);
+
+  const resetSettings = () => {
+    setState(initialState);
+    setFooterText("");
+    setLinkText("");
+    setSelectedOption(null);
+  };
+
+  return (
+    <>
+      <Router>
+        <Header footerText={state.footerText} />
+        <Routes>
+          <Route path="/" element={
+            <Content
+              footerText={footerText}
+              setFooterText={setFooterText}
+              linkText={linkText}
+              setLinkText={setLinkText}
+              selectedOption={selectedOption}
+              setSelectedOption={setSelectedOption}
+            />} 
+          />
+        </Routes>
+        <Footer
+          setFooterText={(text) => setState({ ...state, footerText: text })}
+          resetSettings={resetSettings}
+          setFooterTextContent={setFooterText}
+          setSelectedOption={setSelectedOption}
+        />
+      </Router>
+    </>
+  );
+}
+
+export default App;
+*/
