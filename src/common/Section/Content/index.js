@@ -1,20 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import {
-  Header,
-  Container,
-  Blocks,
-  BlockLeft,
-  Label,
-  BlockRight,
-  Title,
-  Button,
-  ButtonParagraph,
-  Footer,
-  FooterText,
-  BlockFooter,
-  BlockMoreRight,
-} from "./styled.js";
+import "./styled.scss"; // Import the SCSS file
 
 const Content = ({
   footerText,
@@ -85,66 +71,74 @@ const Content = ({
   };
 
   return (
-    <Container>
-      <Header>Nagłówek H1</Header>
-      <Blocks>
-        <BlockLeft>
-          <Title>BLOK PIERWSZY</Title>
-          <Label>
+    <div className="container">
+      <header className="header">Nagłówek H1</header>
+      <div className="blocks">
+        
+        
+        <div className="block-left">
+          <h2 className="title">BLOK PIERWSZY</h2>
+          <label className="label">
             <input
               type="radio"
               name="option"
+              className="radio-button"
               checked={selectedOption === 0}
               onChange={() => handleRadioChange(0)}
-            />{" "}
-            Opcja pierwsza
-          </Label>
-          <Label>
+            /><i className="check"></i>
+            <span className="check_text">Opcja pierwsza</span>
+          </label>
+          <label className="label">
             <input
               type="radio"
               name="option"
+              className="radio-button"
               checked={selectedOption === 1}
               onChange={() => handleRadioChange(1)}
-            />{" "}
-            Opcja druga
-          </Label>
-          <Label>
+            /><i className="check"></i>
+            <span className="check_text">Opcja druga</span>
+          </label>
+          <label className="label">
             <input
               type="radio"
               name="option"
+              className="radio-button"
               checked={selectedOption === 3}
               onChange={() => handleRadioChange(3)}
-            />{" "}
-            Opcja trzecia
-          </Label>
-        </BlockLeft>
-        <BlockRight>
-          <Title>BLOK DRUGI</Title>
-          <BlockMoreRight>
-            <Label>
-              <Button onClick={handleReplaceClick}>
-                <ButtonParagraph>ZASTĄP</ButtonParagraph>
-              </Button>
-            </Label>
-            <Label>
-              <Button onClick={handleAppendClick}>
-                <ButtonParagraph>DOKLEJ</ButtonParagraph>
-              </Button>
-            </Label>
-          </BlockMoreRight>
-        </BlockRight>
-        <BlockFooter>
-          <Title>BLOK Z DŁUGĄ NAZWĄ KTÓRA SAMA SIĘ PRZYTNIE ...</Title>
-          <FooterText>{footerText}</FooterText>
+            /><i className="check"></i>
+            <span className="check_text">Opcja Trzecia</span>
+          </label>
+        </div>
+        
+        
+        
+        <div className="block-right">
+          <h2 className="title">BLOK DRUGI</h2>
+          <div className="block-more-right">
+            <label className="label">
+              <button className="button" onClick={handleReplaceClick}>
+                <p className="button-paragraph">ZASTĄP</p>
+              </button>
+            </label>
+            <label className="label">
+              <button className="button" onClick={handleAppendClick}>
+                <p className="button-paragraph">DOKLEJ</p>
+              </button>
+            </label>
+          </div>
+        </div>
+        <div className="block-footer">
+          <h2 className="title">BLOK Z DŁUGĄ NAZWĄ KTÓRA SAMA SIĘ PRZYTNIE ...</h2>
+          <p className="footer-text">{footerText}</p>
           <a href={`/${footerText}`}>{linkText}</a>
-        </BlockFooter>
-      </Blocks>
-      <Footer>
-        <Title>BLOK Z DŁUGĄ NAZWĄ KTÓRA SAMA SIĘ PRZYTNIE ...</Title>
-        <FooterText>{footerText}</FooterText>
+        </div>
+      </div>
+      <footer className="footer">
+        <h2 className="title">BLOK Z DŁUGĄ NAZWĄ KTÓRA SAMA SIĘ PRZYTNIE ...</h2>
+        <p className="footer-text">{footerText}</p>
         <a href={`/${footerText}`}>{linkText}</a>
-      </Footer>
-    </Container>
+      </footer>
+    </div>
   );
 };
 

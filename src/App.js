@@ -6,6 +6,7 @@ import Header from "./common/Section/Header";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Content from "./common/Section/Content";
 
+
 const initialState = {
   footerText: "",
   contentText: "",
@@ -49,5 +50,6 @@ function App() {
     </>
   );
 }
+  
 
 export default App;
