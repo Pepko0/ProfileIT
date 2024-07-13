@@ -10,7 +10,7 @@ return (
     </Link>
     <Title>
       Zadanie <strong>rekrutacyjne </strong>
-      {footerText}
+      <p>{footerText}</p>
     </Title>
   </Container>
   );

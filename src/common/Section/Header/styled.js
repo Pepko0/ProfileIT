@@ -17,10 +17,15 @@ export const Logo = styled.img`
   border-radius: 100%;
   width: 40px;
   //margin-left: 20px;
+
+  &:hover {
+    background: linear-gradient(to top left, #ffcc00 0%, #ff9933 60%);
+  }
 `;
 
 export const Title = styled.p`
   text-align: right;
   color: white;
-  margin-right: 40px
-`;
+  margin-right: 40px;
+  border: solid;
+  `;
