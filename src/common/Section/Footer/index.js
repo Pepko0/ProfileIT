@@ -1,19 +1,9 @@
 import React, { useState } from "react";
-import {
-  Container,
-  Logo,
-  Button,
-  ButtonParagraph,
-  DropUp,
-  Link,
-  Lists,
-  Item,
-  Company,
-} from "./styled.js";
+import "./styled.scss";
 
 const Footer = ({ setFooterText, resetSettings, setSelectedOption }) => {
   const [isListVisible, setListVisible] = useState(false);
-  const [isButtoDisabled, setButtonDisabled] = useState(false);
+  const [isButtonDisabled, setButtonDisabled] = useState(false);
 
   const handleButtonClick = () => {
     setListVisible(!isListVisible);
@@ -31,9 +21,11 @@ const Footer = ({ setFooterText, resetSettings, setSelectedOption }) => {
   };
 
   return (
-    <Container>
-      <Logo src="https://i.postimg.cc/cHFVK0bd/logo-css-is-awesome-gg.png"></Logo>
-      <Company>
+    <footer>
+      <div className="square">
+        <p className="square-text">CSS<br/>IS<br/>AWESOME</p>
+      </div>
+      <p className="company">
         <svg
           width="20"
           height="20"
@@ -62,10 +54,10 @@ const Footer = ({ setFooterText, resetSettings, setSelectedOption }) => {
         >
           <path d="M1.5 12h21"></path>
         </svg>
-      </Company>
-      <DropUp>
-        <Button onClick={handleButtonClick}>
-          <ButtonParagraph>
+      </p>
+      <div className="dropup">
+        <button className="button" onClick={handleButtonClick}>
+          <p className="button-paragraph">
             {isListVisible ? (
               <>
                 UKRYJ
@@ -101,23 +93,26 @@ const Footer = ({ setFooterText, resetSettings, setSelectedOption }) => {
                 </svg>
               </>
             )}
-          </ButtonParagraph>
-        </Button>
-        <Lists className={isListVisible ? "active" : ""}>
-          <Item>
-            <Link onClick={handleResetClick}> &gt; ZRESETUJ USTAWIENIA</Link>
-          </Item>
-          <Item>
-            <Link
+          </p>
+        </button>
+        <ul className={`lists ${isListVisible ? "active" : ""}`}>
+          <li className="item">
+            <button className="link" onClick={handleResetClick}>
+              &gt; ZRESETUJ USTAWIENIA
+            </button>
+          </li>
+          <li className="item">
+            <button
+              className="link"
               onClick={addTextonClick}
-              disabled={isButtoDisabled}
+              disabled={isButtonDisabled}
             >
               &gt; POKAŻ DANE OSOBOWE
-            </Link>
-          </Item>
-        </Lists>
-      </DropUp>
-    </Container>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </footer>
   );
 };
 

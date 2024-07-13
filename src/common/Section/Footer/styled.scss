@@ -1,69 +1,63 @@
-import styled from "styled-components";
+$black: #000;
+$mineShaft: #333;
 
-export const Container = styled.footer`
+footer {
   position: fixed;
   bottom: 0;
   width: 100%;
   height: 80px;
-  background: ${({ theme }) => theme.color.black};
+  background: $black;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   padding: 20px;
-`;
+}
 
-export const Logo = styled.img`
+.logo {
   border: solid;
   color: white;
   margin: 10px 20px;
-  background-color: ${({ theme }) => theme.color.mineShaft};
-`;
+  background-color: $mineShaft;
+}
 
-export const DropUp = styled.div`
+.dropup {
   align-items: right;
-  margin-top: 20px ;
-`;
+  margin-top: 20px;
+}
 
-export const Button = styled.button`
+.button {
   width: 175px;
   min-height: 40px;
   border-radius: 5px;
-  background-color: ${({ theme }) => theme.color.black};
-  color: ${({ theme }) => theme.color.mineShaft};
+  background-color: $black;
+  color: $mineShaft;
   border: solid 2px;
   display: flex;
   margin-bottom: -172px;
-`;
+}
 
-export const ButtonParagraph = styled.p`
+.button-paragraph {
   display: flex;
   font-weight: bold;
   align-items: center;
   font-size: 15px;
   margin: auto;
   color: gray;
-`;
+}
 
-export const Link = styled.button`
-  //margin: 0 1rem;
+.link {
   text-decoration: none;
-  //padding: 1rem .5rem;
   border: none;
-  // width: 100%;
   background-color: transparent;
   cursor: pointer;
-
-  color: ${(props) => (props.disabled ? "grey" : "black")};
-  pointer-events: ${(props) => (props.disabled ? "none" : "auto")};
-
+  color: black;
 
   &:disabled {
     cursor: not-allowed;
     color: gray;
   }
+}
 
-`;
-
-export const Lists = styled.ul`
+.lists {
   max-width: 250px;
   position: relative;
   background-color: white;
@@ -78,28 +72,27 @@ export const Lists = styled.ul`
   &.active {
     display: block;
   }
-`;
+}
 
-export const Item = styled.li`
+.item {
   padding: 0.5rem;
 
   &:hover {
     background-color: #272b3f;
     border-radius: 5px;
   }
-`;
+}
 
-export const Company = styled.p`
+.company {
   display: none;
 
-  @media (min-width: ${({ theme }) => theme.breakpoint.phone}) {
+  @media (min-width: 480px) { // Change this breakpoint as needed
     display: block;
     margin: auto;
     text-decoration: line-through;
   }
-`;
-
-export const Square = styled.div`
+}
+.square {
   width: 75px;
   height: 100%;
   border: 1px solid;
@@ -109,23 +102,25 @@ export const Square = styled.div`
   @media (min-width: 767px) {
     &:hover {
       color: #ff9933;
-    }
-    
 
-    .SquareText {
-      color: grey;
+      .square-text {
+        color: grey;
+      }
     }
   }
-`;
+}
 
-export const SquareText = styled.p`
+.square-text {
   position: absolute;
   margin-top: 3px;
   margin-left: 6px;
   font-size: 18.5px;
-  color:#323232;
+  color: #323232;
 
-  &:hover {
-    color:#b6b3b3
+  @media (min-width: 767px) {
+    &:hover {
+      color: #ff9933;
+    }
   }
-`;
+}
+

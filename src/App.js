@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Content from "./common/Section/Content";
 
 
+
 const initialState = {
   footerText: "",
   contentText: "",
@@ -27,12 +28,15 @@ function App() {
 
   return (
     <>
+
+    
       <Router>
         <Header footerText={state.footerText} />
         <Routes>
           <Route path="/" />
+          
         </Routes>
-        <Content
+        <Content 
           footerText={footerText}
           setFooterText={setFooterText}
           linkText={linkText}
@@ -53,3 +57,4 @@ function App() {
   
 
 export default App;
+
