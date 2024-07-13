@@ -51,10 +51,15 @@ export const Link = styled.button`
   background-color: transparent;
   cursor: pointer;
 
+  color: ${(props) => (props.disabled ? 'grey' : 'black')};
+  pointer-events: ${(props) => (props.disabled ? 'none' : 'auto')};
+
+  /*
   &:disabled {
     cursor: not-allowed;
     color: gray;
   }
+    */
 `;
 
 export const Lists = styled.ul`

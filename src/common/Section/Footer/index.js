@@ -13,6 +13,7 @@ import {
 
 const Footer = ({ setFooterText, resetSettings, setSelectedOption }) => {
   const [isListVisible, setListVisible] = useState(false);
+  const [isButtoDisabled, setButtonDisabled] = useState(false);
 
   const handleButtonClick = () => {
     setListVisible(!isListVisible);
@@ -20,11 +21,13 @@ const Footer = ({ setFooterText, resetSettings, setSelectedOption }) => {
 
   const addTextonClick = () => {
     setFooterText("Kacper Lewko");
+    setButtonDisabled(true);
   };
 
   const handleResetClick = () => {
     resetSettings();
     setSelectedOption(null);
+    setButtonDisabled(false);
   };
 
   return (
@@ -100,12 +103,17 @@ const Footer = ({ setFooterText, resetSettings, setSelectedOption }) => {
             )}
           </ButtonParagraph>
         </Button>
-        <Lists className={isListVisible ? 'active' : ''}>
+        <Lists className={isListVisible ? "active" : ""}>
           <Item>
             <Link onClick={handleResetClick}> &gt; ZRESETUJ USTAWIENIA</Link>
           </Item>
           <Item>
-            <Link onClick={addTextonClick}>&gt; POKAŻ DANE OSOBOWE</Link>
+            <Link
+              onClick={addTextonClick}
+              disabled={isButtoDisabled}
+            >
+              &gt; POKAŻ DANE OSOBOWE
+            </Link>
           </Item>
         </Lists>
       </DropUp>
