@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Container, Logo, Title } from "./styled.js";
+import { Container, Logo, Title, Author } from "./styled.js";
 
 const Header = ({footerText}) => {
 
@@ -10,7 +10,7 @@ return (
     </Link>
     <Title>
       Zadanie <strong>rekrutacyjne </strong>
-      <p>{footerText}</p>
+      <Author>{footerText}</Author>
     </Title>
   </Container>
   );

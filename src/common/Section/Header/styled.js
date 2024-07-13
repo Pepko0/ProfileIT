@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.header`
-  height: 70px;
+  height: 90px;
   padding-left: 20px;
   padding-right: 20px;;
   background-color: ${({ theme }) => theme.color.black};
@@ -15,7 +15,7 @@ export const Logo = styled.img`
   padding: 5px;
   //border: solid;
   border-radius: 100%;
-  width: 40px;
+  width: 60px;
   //margin-left: 20px;
 
   &:hover {
@@ -26,6 +26,10 @@ export const Logo = styled.img`
 export const Title = styled.p`
   text-align: right;
   color: white;
-  margin-right: 40px;
-  border: solid;
+
   `;
+
+
+export const Author = styled.p`
+  margin-top: 0px;
+`;
