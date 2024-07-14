@@ -1,5 +1,4 @@
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./styled.scss";
 
 const Footer = ({ setFooterText, resetSettings, setSelectedOption }) => {
@@ -13,13 +12,28 @@ const Footer = ({ setFooterText, resetSettings, setSelectedOption }) => {
   const addTextonClick = () => {
     setFooterText("Kacper Lewko");
     setButtonDisabled(true);
+    setListVisible(false); // Ukryj listę po kliknięciu
   };
 
   const handleResetClick = () => {
     resetSettings();
     setSelectedOption(null);
     setButtonDisabled(false);
+    setListVisible(false); // Ukryj listę po kliknięciu
   };
+
+  const handleClickOutside = (event) => {
+    if (isListVisible && !event.target.closest('.dropup')) {
+      setListVisible(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [isListVisible]);
 
   return (
     <footer>

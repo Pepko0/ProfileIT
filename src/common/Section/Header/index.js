@@ -1,20 +1,20 @@
+import React from "react";
 import { Link } from "react-router-dom";
-import { Container, Logo, Title, Author, BlockText } from "./styled.js";
+import "./styled.scss";
 
-const Header = ({footerText}) => {
-
-return (
-  <Container>
-    <Link to="/">
-    <Logo src="https://i.postimg.cc/KYdcs756/5.png" />
-    </Link>
-    <BlockText>
-    <Title>
-      Zadanie <strong>rekrutacyjne </strong>
-      <Author>{footerText}</Author>
-    </Title>
-    </BlockText>
-  </Container>
+const Header = ({ footerText }) => {
+  return (
+    <header className="header1">
+      <Link to="/">
+        <img src="https://i.postimg.cc/KYdcs756/5.png" alt="Logo" className="header1__logo" />
+      </Link>
+      <div className="header1__block-text">
+        <p className="header1__title">
+          Zadanie <strong>rekrutacyjne</strong>
+          <span className="header1__author">{footerText}</span>
+        </p>
+      </div>
+    </header>
   );
 };
 
