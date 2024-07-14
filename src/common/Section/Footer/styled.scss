@@ -1,5 +1,9 @@
 $black: #000;
+$white: #ffffff;
 $mineShaft: #333;
+$neonCarrot: #ff9933;
+$grey: #808080;
+$transparent: transparent;
 $phone: 767px;
 
 .footer {
@@ -16,18 +20,18 @@ $phone: 767px;
     width: 75px;
     height: 100%;
     border: 1px solid;
-    color: #323232;
+    color: $mineShaft;
     padding: 0px;
     transition: 2s;
 
     @media (min-width: $phone) {
       &:hover {
-        color: #ff9933;
+        color: $neonCarrot;
         transform: rotate(360deg);
         cursor: pointer;
 
         .footer__square-text {
-          color: grey;
+          color: $grey;
           transform: none;
         }
       }
@@ -39,11 +43,11 @@ $phone: 767px;
     margin-top: 3px;
     margin-left: 6px;
     font-size: 18.5px;
-    color: #323232;
+    color: $mineShaft;
 
     @media (min-width: $phone) {
       &:hover {
-        color: #ff9933;
+        color: $neonCarrot;
         transform: none;
       }
     }
@@ -64,7 +68,7 @@ $phone: 767px;
     display: inline-block;
     width: 50px;
     height: 1px;
-    background-color: black;
+    background-color: $black;
     position: relative;
     margin: 6px 0;
 
@@ -97,10 +101,10 @@ $phone: 767px;
     @media (min-width: $phone) {
       &:hover {
         cursor: pointer;
-        color: white;
+        color: $white;
 
         .footer__button-paragraph {
-          color: white;
+          color:$white;
         }
       }
     }
@@ -113,7 +117,7 @@ $phone: 767px;
     align-items: center;
     margin: auto;
     font-size: 15px;
-    color: gray;
+    color: $grey;
   }
 
   &__button-paragraph-rotateDown {
@@ -133,10 +137,10 @@ $phone: 767px;
   &__list {
     max-width: 250px;
     position: absolute;
-    background-color: white;
+    background-color: $white;
     padding: 0px;
     list-style-type: none;
-    box-shadow: 0px 0px 23px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 23px 0px $black;
     border-radius: 2px;
     bottom: 104px;
     right: 60px;
@@ -158,24 +162,24 @@ $phone: 767px;
   &__link {
     text-decoration: none;
     border: none;
-    background-color: transparent;
+    background-color: $transparent;
     cursor: pointer;
-    color: black;
+    color: $black;
     font-weight: bold;
     font-size: 12px;
 
     &:disabled {
       cursor: default;
-      color: gray;
+      color: $grey;
 
       &:hover {
-        color: grey;
+        color: $grey;
       }
     }
 
     @media (min-width: $phone) {
       &:hover {
-        color: #ff9933;
+        color: $neonCarrot;
       }
     }
   }
