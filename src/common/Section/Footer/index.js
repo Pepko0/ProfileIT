@@ -56,7 +56,7 @@ const Footer = ({ setFooterText, resetSettings, setSelectedOption }) => {
         </svg>
       </p>
       <div className="dropup">
-        <button className="button" onClick={handleButtonClick}>
+        <button className="button1" onClick={handleButtonClick}>
           <p className="button-paragraph">
             {isListVisible ? (
               <>

@@ -7,8 +7,8 @@ footer {
   width: 100%;
   height: 80px;
   background: $black;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
   padding: 20px;
 }
 
@@ -20,11 +20,12 @@ footer {
 }
 
 .dropup {
-  align-items: right;
-  margin-top: 20px;
+  padding-top: 20px;
+  margin-right: 40px;
+
 }
 
-.button {
+.button1 {
   width: 175px;
   min-height: 40px;
   border-radius: 5px;
@@ -32,7 +33,6 @@ footer {
   color: $mineShaft;
   border: solid 2px;
   display: flex;
-  margin-bottom: -172px;
 }
 
 .button-paragraph {
@@ -59,14 +59,14 @@ footer {
 
 .lists {
   max-width: 250px;
-  position: relative;
+  position: absolute;
   background-color: white;
   padding: 0px;
   list-style-type: none;
   box-shadow: 0px 0px 23px 0px rgba(0, 0, 0, 0.25);
-  border-radius: 5px;
-  bottom: 0px;
-  right: 20px;
+  border-radius: 2px;
+  bottom: 104px;
+  right: 60px;
   display: none;
 
   &.active {
@@ -77,16 +77,17 @@ footer {
 .item {
   padding: 0.5rem;
 
+
   &:hover {
     background-color: #272b3f;
-    border-radius: 5px;
+    border-radius: 2px;
   }
 }
 
 .company {
   display: none;
 
-  @media (min-width: 480px) { // Change this breakpoint as needed
+  @media (min-width: 767px) { // Change this breakpoint as needed
     display: block;
     margin: auto;
     text-decoration: line-through;

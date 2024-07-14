@@ -1,3 +1,4 @@
+/*
 
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -145,7 +146,8 @@ const Content = ({
 
 export default Content;
 
-/*
+*/
+
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./styled.scss";
@@ -168,31 +170,29 @@ const Content = ({
         }
         return response.json();
       })
-      .then((data) => setTexts(data))
+      .then((data) => {
+        setTexts(data.texts || []); // Pobieranie tekstów do opcji radiowych
+        if (data.initialText) {
+          setFooterText(data.initialText); // Ustawienie początkowego tekstu
+        }
+      })
       .catch((error) => console.error("Error loading texts:", error));
-  }, []);
+  }, [setFooterText]);
 
   const handleRadioChange = (option) => {
     setSelectedOption(option);
-    if (texts.length === 0) {
-      return;
-    }
-
-    let newText = "";
-    if (option === 3) {
-      do {
-        newText = texts[Math.floor(Math.random() * texts.length)];
-      } while (newText === footerText);
-    } else {
-      newText = texts[option];
-    }
-    setFooterText(newText);
-    navigate(`/${newText}`);
   };
 
   const handleReplaceClick = () => {
     if (selectedOption !== null && texts.length > 0) {
-      const newText = texts[selectedOption];
+      let newText;
+      if (selectedOption === 3) {
+        do {
+          newText = texts[Math.floor(Math.random() * texts.length)];
+        } while (newText === footerText);
+      } else {
+        newText = texts[selectedOption];
+      }
       setFooterText(newText);
       navigate(`/${newText}`);
     }
@@ -255,7 +255,7 @@ const Content = ({
             <span className="check_text">Opcja Trzecia</span>
           </label>
         </div>
-
+        
         <div className="block-right">
           <h2 className="title">BLOK DRUGI</h2>
           <div className="block-more-right">
@@ -277,14 +277,13 @@ const Content = ({
           <a href={`/${footerText}`}>{linkText}</a>
         </div>
       </div>
-      <footer className="footer">
+      <div className="footer1">
         <h2 className="title">BLOK Z DŁUGĄ NAZWĄ KTÓRA SAMA SIĘ PRZYTNIE ...</h2>
         <p className="footer-text">{footerText}</p>
         <a href={`/${footerText}`}>{linkText}</a>
-      </footer>
+      </div>
     </div>
   );
 };
 
 export default Content;
-*/
