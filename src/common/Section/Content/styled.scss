@@ -67,6 +67,16 @@
     font-weight: 500;
     margin-bottom: 1.5em;
   }
+
+  
+  .title_cut{
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 1.5em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
   
   .label {
     display:block;
@@ -91,6 +101,10 @@
       &:hover {
         cursor: pointer;
         background: linear-gradient(to top left, #ffcc00 0%, #ff9933 60%);
+
+        .button-paragraph{
+          color: white;
+        }
       }
     }
   }
@@ -104,12 +118,7 @@
     margin: auto;
     color: #aba4a4;
 
-    @media(min-width: 767px){
-        &:hover {
-            color: white;
-            
-        }
-    }
+
   }
   
   .footer1 {

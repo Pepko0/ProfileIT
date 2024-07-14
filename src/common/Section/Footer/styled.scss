@@ -44,6 +44,8 @@ footer {
   color: gray;
 }
 
+
+
 .link {
   text-decoration: none;
   border: none;
@@ -84,28 +86,22 @@ footer {
   }
 }
 
-.company {
-  display: none;
-
-  @media (min-width: 767px) { // Change this breakpoint as needed
-    display: block;
-    margin: auto;
-    text-decoration: line-through;
-  }
-}
 .square {
   width: 75px;
   height: 100%;
   border: 1px solid;
   color: #323232;
   padding: 0px;
+  transition: 2s;
 
   @media (min-width: 767px) {
     &:hover {
       color: #ff9933;
+      transform: rotate(360deg);
 
       .square-text {
         color: grey;
+        transform: none;
       }
     }
   }
@@ -121,7 +117,54 @@ footer {
   @media (min-width: 767px) {
     &:hover {
       color: #ff9933;
+      transform: none;
     }
   }
 }
 
+
+.button_paragraph-rotateDown{
+  display: inline-block;
+  transform: rotate(90deg);
+  margin-left: 10px;
+  margin-top: 2px;
+}
+
+.button_paragraph-rotateUp{
+  display: inline-block;
+  transform: rotate(270deg);
+  margin-left: 10px;
+  margin-bottom: 2px;
+}
+
+
+.line-only {
+  display: inline-block;
+  width: 50px; // Szerokość linii, możesz dostosować
+  height: 1px;  // Grubość linii, możesz dostosować
+  background-color: black; // Kolor linii, możesz dostosować
+  position: relative;
+  margin: 6px 0; // Przestrzeń wokół linii, jeśli potrzebna
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $mineShaft; // Kolor linii
+    transform: translateY(5%);
+  }
+}
+
+.company {
+  display: none;
+
+  @media (min-width: 767px) { // Change this breakpoint as needed
+    display: block;
+    margin: auto;
+    font-size: 25px;
+    color: $mineShaft;
+  }
+}
