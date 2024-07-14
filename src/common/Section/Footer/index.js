@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import "./styled.scss";
 
@@ -103,3 +104,4 @@ const Footer = ({ setFooterText, resetSettings, setSelectedOption }) => {
 };
 
 export default Footer;
+

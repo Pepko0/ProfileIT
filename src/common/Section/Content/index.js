@@ -1,5 +1,5 @@
+
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import "./styled.scss";
 
 const Content = ({
@@ -10,7 +10,6 @@ const Content = ({
   setSelectedOption,
 }) => {
   const [texts, setTexts] = useState([]);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const storedTexts = JSON.parse(localStorage.getItem("texts"));
@@ -46,7 +45,6 @@ const Content = ({
     if (selectedOption !== null && texts.length > 0) {
       let newText;
       if (selectedOption === 2) {
-
         do {
           newText = texts[Math.floor(Math.random() * texts.length)];
         } while (newText === footerText);
@@ -55,7 +53,6 @@ const Content = ({
       }
       setFooterText(newText);
       localStorage.setItem("footerText", newText);
-      navigate(`/${newText}`);
     }
   };
 
@@ -63,7 +60,6 @@ const Content = ({
     if (selectedOption !== null && texts.length > 0) {
       let newText;
       if (selectedOption === 2) {
-
         do {
           newText = texts[Math.floor(Math.random() * texts.length)];
         } while (newText === footerText);
@@ -75,7 +71,6 @@ const Content = ({
           .sort()
           .join(" ");
         localStorage.setItem("footerText", updatedFooterText);
-        navigate(`/${updatedFooterText}`);
         return updatedFooterText;
       });
     }
@@ -98,6 +93,10 @@ const Content = ({
     setTexts(newTexts);
     localStorage.setItem("texts", JSON.stringify(newTexts));
   };
+
+
+
+
 
   return (
     <div className="container">
@@ -160,7 +159,7 @@ const Content = ({
             BLOK Z DŁUGĄ NAZWĄ KTÓRA SAMA SIĘ PRZYTNIE ...
           </h2>
           <p className="footer-text">{footerText}</p>
-          <a href={`/${footerText}`}>{linkText}</a>
+          <a href="#">{linkText}</a>
         </div>
       </div>
       <div className="footer1">
@@ -168,7 +167,7 @@ const Content = ({
           BLOK Z DŁUGĄ NAZWĄ KTÓRA SAMA SIĘ PRZYTNIE ...
         </h2>
         <p className="footer-text">{footerText}</p>
-        <a href={`/${footerText}`}>{linkText}</a>
+        <a href="#">{linkText}</a>
       </div>
     </div>
   );
