@@ -26,22 +26,41 @@ footer {
 }
 
 .button1 {
-  width: 175px;
+  width: 186px;
   min-height: 40px;
-  border-radius: 5px;
+  border-radius: 2px;
   background-color: $black;
   color: $mineShaft;
-  border: solid 2px;
+  border: solid 1px;
   display: flex;
+
+  @media(min-width: 767px){
+    &:hover{
+      cursor: pointer;
+      color: white;
+    
+      .button-paragraph1 {
+        color: white;
+      }
+    }
+  }
+
 }
 
-.button-paragraph {
+.button-paragraph1 {
   display: flex;
   font-weight: bold;
+  justify-content: center;
   align-items: center;
-  font-size: 15px;
+  align-items: center;
   margin: auto;
+  font-size: 15px;
   color: gray;
+
+  @media(min-width: 767px){
+
+
+  }
 }
 
 
@@ -52,10 +71,22 @@ footer {
   background-color: transparent;
   cursor: pointer;
   color: black;
+  font-weight: bold;
+  font-size: 12px;
 
   &:disabled {
-    cursor: not-allowed;
+    cursor: default;
     color: gray;
+   
+    &:hover{
+      color: grey;
+    }
+  }
+
+  @media(min-width: 767px){
+    &:hover {
+      color: #ff9933;
+    }
   }
 }
 
@@ -73,17 +104,15 @@ footer {
 
   &.active {
     display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding:5px;
   }
 }
 
 .item {
-  padding: 0.5rem;
-
-
-  &:hover {
-    background-color: #272b3f;
-    border-radius: 2px;
-  }
+  padding: 0.2rem;
 }
 
 .square {
@@ -140,11 +169,11 @@ footer {
 
 .line-only {
   display: inline-block;
-  width: 50px; // Szerokość linii, możesz dostosować
-  height: 1px;  // Grubość linii, możesz dostosować
-  background-color: black; // Kolor linii, możesz dostosować
+  width: 50px;
+  height: 1px;  
+  background-color: black; 
   position: relative;
-  margin: 6px 0; // Przestrzeń wokół linii, jeśli potrzebna
+  margin: 6px 0;
 
   &::before {
     content: "";
@@ -153,7 +182,7 @@ footer {
     left: 0;
     width: 100%;
     height: 1px;
-    background-color: $mineShaft; // Kolor linii
+    background-color: $mineShaft; 
     transform: translateY(5%);
   }
 }
@@ -161,7 +190,7 @@ footer {
 .company {
   display: none;
 
-  @media (min-width: 767px) { // Change this breakpoint as needed
+  @media (min-width: 767px) { 
     display: block;
     margin: auto;
     font-size: 25px;

@@ -37,7 +37,7 @@ const Footer = ({ setFooterText, resetSettings, setSelectedOption }) => {
       </p>
       <div className="dropup">
         <button className="button1" onClick={handleButtonClick}>
-          <p className="button-paragraph">
+          <p className="button-paragraph1">
             {isListVisible ? <>UKRYJ<span className="button_paragraph-rotateDown" >&gt;</span></> : <>POKAŻ  <span className="button_paragraph-rotateUp" >&gt;</span></>}
           </p>
         </button>
