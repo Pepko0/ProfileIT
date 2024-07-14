@@ -46,7 +46,7 @@ const Content = ({
     if (selectedOption !== null && texts.length > 0) {
       let newText;
       if (selectedOption === 2) {
-        // Opcja trzecia to indeks 2
+
         do {
           newText = texts[Math.floor(Math.random() * texts.length)];
         } while (newText === footerText);
@@ -63,7 +63,7 @@ const Content = ({
     if (selectedOption !== null && texts.length > 0) {
       let newText;
       if (selectedOption === 2) {
-        // Opcja trzecia to indeks 2
+
         do {
           newText = texts[Math.floor(Math.random() * texts.length)];
         } while (newText === footerText);

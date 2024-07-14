@@ -4,6 +4,8 @@ $nobel: #b6b3b3;
 $mineShaft: #323232;
 $silverChalice: #ABA4A4;
 $transparent: transparent;
+$neonCarrot: #FF9933;
+$superNova: #FFCC00;
 
 .container {
     padding: 20px;
@@ -108,7 +110,7 @@ $transparent: transparent;
       margin: 10px;
       &:hover {
         cursor: pointer;
-        background: linear-gradient(to top left, #ffcc00 0%, #ff9933 60%);
+        background: linear-gradient(to top left, $superNova 0%, $neonCarrot 60%);
 
         .button-paragraph{
           color: $white;

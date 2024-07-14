@@ -11,7 +11,7 @@ const Header = ({ footerText }) => {
       <div className="header1__block-text">
         <p className="header1__title">
           Zadanie <strong>rekrutacyjne</strong>
-          <span className="header1__author">{footerText}</span>
+          <p className="header1__author">{footerText}</p>
         </p>
       </div>
     </header>
