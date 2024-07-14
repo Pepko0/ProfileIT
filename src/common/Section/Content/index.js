@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./styled.scss";
@@ -46,7 +45,8 @@ const Content = ({
   const handleReplaceClick = () => {
     if (selectedOption !== null && texts.length > 0) {
       let newText;
-      if (selectedOption === 2) { // Opcja trzecia to indeks 2
+      if (selectedOption === 2) {
+        // Opcja trzecia to indeks 2
         do {
           newText = texts[Math.floor(Math.random() * texts.length)];
         } while (newText === footerText);
@@ -62,7 +62,8 @@ const Content = ({
   const handleAppendClick = () => {
     if (selectedOption !== null && texts.length > 0) {
       let newText;
-      if (selectedOption === 2) { // Opcja trzecia to indeks 2
+      if (selectedOption === 2) {
+        // Opcja trzecia to indeks 2
         do {
           newText = texts[Math.floor(Math.random() * texts.length)];
         } while (newText === footerText);
@@ -111,7 +112,8 @@ const Content = ({
               className="radio-button"
               checked={selectedOption === 0}
               onChange={() => handleRadioChange(0)}
-            /><i className="check"></i>
+            />
+            <i title="Wybierz opcję" className="check"></i>
             <span className="check_text">Opcja pierwsza</span>
           </label>
           <label className="label">
@@ -121,7 +123,8 @@ const Content = ({
               className="radio-button"
               checked={selectedOption === 1}
               onChange={() => handleRadioChange(1)}
-            /><i className="check"></i>
+            />
+            <i title="Wybierz opcję" className="check"></i>
             <span className="check_text">Opcja druga</span>
           </label>
           <label className="label">
@@ -131,34 +134,39 @@ const Content = ({
               className="radio-button"
               checked={selectedOption === 2}
               onChange={() => handleRadioChange(2)}
-            /><i className="check"></i>
+            />
+            <i title="Wybierz opcję" className="check"></i>
             <span className="check_text">Opcja trzecia</span>
           </label>
         </div>
-        
+
         <div className="block-right">
           <h2 className="title">BLOK DRUGI</h2>
           <div className="block-more-right">
             <label className="label">
-              <button className="button" onClick={handleReplaceClick}>
+              <button title="Zastąp Tekst" className="button" onClick={handleReplaceClick}>
                 <p className="button-paragraph">ZASTĄP</p>
               </button>
             </label>
             <label className="label">
-              <button className="button" onClick={handleAppendClick}>
+              <button title="Doklej Tekst" className="button" onClick={handleAppendClick}>
                 <p className="button-paragraph">DOKLEJ</p>
               </button>
             </label>
           </div>
         </div>
         <div className="block-footer">
-          <h2 className="title">BLOK Z DŁUGĄ NAZWĄ KTÓRA SAMA SIĘ PRZYTNIE ...</h2>
+          <h2 className="title">
+            BLOK Z DŁUGĄ NAZWĄ KTÓRA SAMA SIĘ PRZYTNIE ...
+          </h2>
           <p className="footer-text">{footerText}</p>
           <a href={`/${footerText}`}>{linkText}</a>
         </div>
       </div>
       <div className="footer1">
-        <h2 className="title_cut">BLOK Z DŁUGĄ NAZWĄ KTÓRA SAMA SIĘ PRZYTNIE ...</h2>
+        <h2 className="title_cut">
+          BLOK Z DŁUGĄ NAZWĄ KTÓRA SAMA SIĘ PRZYTNIE ...
+        </h2>
         <p className="footer-text">{footerText}</p>
         <a href={`/${footerText}`}>{linkText}</a>
       </div>
@@ -167,4 +175,3 @@ const Content = ({
 };
 
 export default Content;
-
