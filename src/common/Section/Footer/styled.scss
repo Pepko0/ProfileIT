@@ -23,6 +23,7 @@ $mineShaft: #333;
       &:hover {
         color: #ff9933;
         transform: rotate(360deg);
+        cursor: pointer;
 
         .footer__square-text {
           color: grey;
