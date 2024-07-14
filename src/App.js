@@ -34,7 +34,6 @@ function App() {
         <Header footerText={state.footerText} />
         <Routes>
           <Route path="/" />
-          
         </Routes>
         <Content 
           footerText={footerText}

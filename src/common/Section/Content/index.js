@@ -134,11 +134,11 @@ const Content = ({
           <a href={`/${footerText}`}>{linkText}</a>
         </div>
       </div>
-      <footer className="footer">
+      <div className="footer1">
         <h2 className="title">BLOK Z DŁUGĄ NAZWĄ KTÓRA SAMA SIĘ PRZYTNIE ...</h2>
         <p className="footer-text">{footerText}</p>
         <a href={`/${footerText}`}>{linkText}</a>
-      </footer>
+      </div>
     </div>
   );
 };
