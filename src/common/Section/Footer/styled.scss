@@ -1,5 +1,6 @@
 $black: #000;
 $mineShaft: #333;
+$phone: 767px;
 
 .footer {
   position: fixed;
@@ -19,7 +20,7 @@ $mineShaft: #333;
     padding: 0px;
     transition: 2s;
 
-    @media (min-width: 767px) {
+    @media (min-width: $phone) {
       &:hover {
         color: #ff9933;
         transform: rotate(360deg);
@@ -40,7 +41,7 @@ $mineShaft: #333;
     font-size: 18.5px;
     color: #323232;
 
-    @media (min-width: 767px) {
+    @media (min-width: $phone) {
       &:hover {
         color: #ff9933;
         transform: none;
@@ -51,7 +52,7 @@ $mineShaft: #333;
   &__company {
     display: none;
 
-    @media (min-width: 767px) {
+    @media (min-width: $phone) {
       display: block;
       margin: auto;
       font-size: 25px;
@@ -93,7 +94,7 @@ $mineShaft: #333;
     border: solid 1px;
     display: flex;
 
-    @media (min-width: 767px) {
+    @media (min-width: $phone) {
       &:hover {
         cursor: pointer;
         color: white;
@@ -172,7 +173,7 @@ $mineShaft: #333;
       }
     }
 
-    @media (min-width: 767px) {
+    @media (min-width: $phone) {
       &:hover {
         color: #ff9933;
       }
