@@ -1,11 +1,4 @@
-[
-  "A",
-  "B",
-  "C",
-  "D",
-  "E",
-  "F",
-  "G",
-  "H",
-  "I"
-]
+{
+  "texts": ["A", "B", "C", "D","E","F","G"],
+  "initialText": "Hi! NICE TO MEET YOU"
+}
