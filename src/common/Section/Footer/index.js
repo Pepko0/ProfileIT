@@ -9,21 +9,21 @@ const Footer = ({ setFooterText, resetSettings, setSelectedOption }) => {
     setListVisible(!isListVisible);
   };
 
-  const addTextonClick = () => {
+  const addTextOnClick = () => {
     setFooterText("Kacper Lewko");
     setButtonDisabled(true);
-    setListVisible(false); // Ukryj listę po kliknięciu
+    setListVisible(false); 
   };
 
   const handleResetClick = () => {
     resetSettings();
     setSelectedOption(null);
     setButtonDisabled(false);
-    setListVisible(false); // Ukryj listę po kliknięciu
+    setListVisible(false); 
   };
 
   const handleClickOutside = (event) => {
-    if (isListVisible && !event.target.closest('.dropup')) {
+    if (isListVisible && !event.target.closest('.footer__dropup')) {
       setListVisible(false);
     }
   };
@@ -36,9 +36,9 @@ const Footer = ({ setFooterText, resetSettings, setSelectedOption }) => {
   }, [isListVisible]);
 
   return (
-    <footer>
-      <div className="square">
-        <p className="square-text">
+    <footer className="footer">
+      <div className="footer__square">
+        <p className="footer__square-text">
           CSS
           <br />
           IS
@@ -46,25 +46,33 @@ const Footer = ({ setFooterText, resetSettings, setSelectedOption }) => {
           AWESOME
         </p>
       </div>
-      <p className="company">
-      <span className="line-only"></span>nabthat<span className="line-only"></span>
+      <p className="footer__company">
+        <span className="footer__line"></span>nabthat<span className="footer__line"></span>
       </p>
-      <div className="dropup">
-        <button className="button1" onClick={handleButtonClick}>
-          <p className="button-paragraph1">
-            {isListVisible ? <>UKRYJ<span className="button_paragraph-rotateDown" >&gt;</span></> : <>POKAŻ  <span className="button_paragraph-rotateUp" >&gt;</span></>}
+      <div className="footer__dropup">
+        <button className="footer__button" onClick={handleButtonClick}>
+          <p className="footer__button-paragraph">
+            {isListVisible ? (
+              <>
+                UKRYJ<span className="footer__button-paragraph-rotateDown">&gt;</span>
+              </>
+            ) : (
+              <>
+                POKAŻ<span className="footer__button-paragraph-rotateUp">&gt;</span>
+              </>
+            )}
           </p>
         </button>
-        <ul className={`lists ${isListVisible ? "active" : ""}`}>
-          <li className="item">
-            <button className="link" onClick={handleResetClick}>
+        <ul className={`footer__list ${isListVisible ? "footer__list--active" : ""}`}>
+          <li className="footer__item">
+            <button className="footer__link" onClick={handleResetClick}>
               &gt; ZRESETUJ USTAWIENIA
             </button>
           </li>
-          <li className="item">
+          <li className="footer__item">
             <button
-              className="link"
-              onClick={addTextonClick}
+              className="footer__link"
+              onClick={addTextOnClick}
               disabled={isButtonDisabled}
             >
               &gt; POKAŻ DANE OSOBOWE
