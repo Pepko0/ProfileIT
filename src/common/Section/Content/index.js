@@ -13,20 +13,29 @@ const Content = ({
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`${process.env.PUBLIC_URL}/texts.json`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setTexts(data.texts || []);
-        if (data.initialText) {
-          setFooterText(data.initialText);
-        }
-      })
-      .catch((error) => console.error("Error loading texts:", error));
+    const storedTexts = JSON.parse(localStorage.getItem("texts"));
+    if (storedTexts && storedTexts.length > 0) {
+      setTexts(storedTexts);
+      setFooterText(localStorage.getItem("footerText") || "");
+    } else {
+      fetch(`${process.env.PUBLIC_URL}/texts.json`)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          const initialTexts = data.texts || [];
+          setTexts(initialTexts);
+          localStorage.setItem("texts", JSON.stringify(initialTexts));
+          if (data.initialText) {
+            setFooterText(data.initialText);
+            localStorage.setItem("footerText", data.initialText);
+          }
+        })
+        .catch((error) => console.error("Error loading texts:", error));
+    }
   }, [setFooterText]);
 
   const handleRadioChange = (option) => {
@@ -36,7 +45,7 @@ const Content = ({
   const handleReplaceClick = () => {
     if (selectedOption !== null && texts.length > 0) {
       let newText;
-      if (selectedOption === 3) {
+      if (selectedOption === 2) { // Opcja trzecia to indeks 2
         do {
           newText = texts[Math.floor(Math.random() * texts.length)];
         } while (newText === footerText);
@@ -44,6 +53,7 @@ const Content = ({
         newText = texts[selectedOption];
       }
       setFooterText(newText);
+      localStorage.setItem("footerText", newText);
       navigate(`/${newText}`);
     }
   };
@@ -51,7 +61,7 @@ const Content = ({
   const handleAppendClick = () => {
     if (selectedOption !== null && texts.length > 0) {
       let newText;
-      if (selectedOption === 3) {
+      if (selectedOption === 2) { // Opcja trzecia to indeks 2
         do {
           newText = texts[Math.floor(Math.random() * texts.length)];
         } while (newText === footerText);
@@ -62,10 +72,29 @@ const Content = ({
         const updatedFooterText = [...prevText.split(" "), newText]
           .sort()
           .join(" ");
+        localStorage.setItem("footerText", updatedFooterText);
         navigate(`/${updatedFooterText}`);
         return updatedFooterText;
       });
     }
+  };
+
+  const addText = (text) => {
+    const newTexts = [...texts, text];
+    setTexts(newTexts);
+    localStorage.setItem("texts", JSON.stringify(newTexts));
+  };
+
+  const editText = (index, newText) => {
+    const newTexts = texts.map((text, i) => (i === index ? newText : text));
+    setTexts(newTexts);
+    localStorage.setItem("texts", JSON.stringify(newTexts));
+  };
+
+  const deleteText = (index) => {
+    const newTexts = texts.filter((_, i) => i !== index);
+    setTexts(newTexts);
+    localStorage.setItem("texts", JSON.stringify(newTexts));
   };
 
   return (
@@ -99,10 +128,10 @@ const Content = ({
               type="radio"
               name="option"
               className="radio-button"
-              checked={selectedOption === 3}
-              onChange={() => handleRadioChange(3)}
+              checked={selectedOption === 2}
+              onChange={() => handleRadioChange(2)}
             /><i className="check"></i>
-            <span className="check_text">Opcja Trzecia</span>
+            <span className="check_text">Opcja trzecia</span>
           </label>
         </div>
         
