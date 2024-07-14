@@ -1,21 +1,27 @@
+$black: #000000;
+$mineShaft: #2d2d2d;
+$white: #ffffff;
+$neonCarrot: #FF9933;
+$superNova: #FFCC00;
+
 .header1 {
     height: 90px;
     padding-left: 20px;
     padding-right: 20px;
-    background-color: #000; // Assuming theme.color.black is black
+    background-color: $black; // Assuming theme.color.black is black
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
   
     &__logo {
-      background-color: #2d2d2d;
-      color: white;
+      background-color: $mineShaft;
+      color: $white;
       padding: 5px;
       border-radius: 100%;
       width: 60px;
   
       &:hover {
-        background: linear-gradient(to top left, #ffcc00 0%, #ff9933 60%);
+        background: linear-gradient(to top left, $superNova 0%, $neonCarrot 60%);
       }
     }
   
